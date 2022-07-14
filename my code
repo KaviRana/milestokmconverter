@@ -1,0 +1,28 @@
+from tkinter import *
+
+def converter():
+    mil = float(miles_input.get())
+    kms = mil*1.609
+    kilometer_result_label.config(text=f"{kms}")
+
+
+window = Tk()
+window.title("Miles to Kilometer Converter")
+window.config(padx=40,pady=40)
+
+# list all the widgets I need.
+miles_input = Entry(width=7)
+miles_label = Label(text="Miles")
+is_equal_label = Label(text="is equal to")
+kilometer_result_label = Label(text="0")
+kilometer_label = Label(text="Km")
+calculate_button = Button(text="Calculate",command=converter)
+
+# using grid method to layout all the widgets.
+miles_input.grid(column=1,row=0)
+miles_label.grid(column=2,row=0)
+is_equal_label.grid(column=0,row=1)
+kilometer_result_label.grid(column=1,row=1)
+kilometer_label.grid(column=2,row=1)
+calculate_button.grid(column=1,row=2)
+window.mainloop()
